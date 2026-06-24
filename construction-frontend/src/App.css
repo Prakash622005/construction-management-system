@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎨 Global Architectural Design System Variables */
+@layer base {
+  :root {
+    --background: #F8FAFC;       /* Premium Ice White Base Layer */
+    --foreground: #0F172A;       /* Deep Steel Slate Body Font */
+    
+    --accent: #3B82F6;           /* Core Blueprint Blue Indicator Accent */
+    --accent-bg: rgba(59, 130, 246, 0.05);
+    --accent-border: #CBD5E1;    
+    
+    --border: #E2E8F0;           /* Subtle Dev Grid Separators */
+    --text-h: #0F172A;
+    --social-bg: #F1F5F9;
+    --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  }
+
+  /* 📐 Body Canvas Anti-Aliasing Setup */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* 🧪 Complex Utility Layers (Pre-calculated Perspective Transforms) */
+@layer utilities {
+  /* Isometric Viewport Rotations for Framework and Vite Logos */
+  .transform-isometric-framework {
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
+  }
+  
+  .transform-isometric-vite {
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
+  }
+
+  /* Custom Clean Decorative Anchor Triangles */
+  .ticks-pseudo::before {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    border: 5px solid transparent;
+    border-left-color: var(--border);
+  }
+  
+  .ticks-pseudo::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    right: 0;
+    border: 5px solid transparent;
+    border-right-color: var(--border);
+  }
+}
