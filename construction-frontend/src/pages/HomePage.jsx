@@ -10,6 +10,8 @@ import StatsSection from "../components/home/StatsSection";
 import ProjectsSection from "../components/home/ProjectsSection";
 import AppointmentForm from "../components/home/AppointmentForm";
 import ContactSection from "../components/home/ContactSection";
+import WhyChooseUs from "../components/home/WhyChooseUs";
+import ReviewSection from "../components/home/ReviewSection";
 
 const HomePage = () => {
   const styles = {
@@ -30,6 +32,8 @@ const HomePage = () => {
         {/* Corporate Overview and Business Background Info Section */}
         <AboutSection />
 
+        <WhyChooseUs />
+
         {/* Client Success Metrics and Analytics Counter Banner */}
         <StatsSection />
 
@@ -41,7 +45,7 @@ const HomePage = () => {
 
         {/* Real-time Appointment Registration Status Tracker Verification Widget */}
         <AppointmentStatus />
-
+        <ReviewSection />
         {/* Geographic Map Locator, Contact Forms, and Details Panel */}
         <ContactSection />
       </main>

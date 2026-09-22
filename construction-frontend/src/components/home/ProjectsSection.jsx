@@ -12,6 +12,10 @@ const ProjectsSection = () => {
   const fetchProjects = async () => {
     try {
       const data = await getAllProjects();
+
+      console.log("Projects API Response:", data);
+      console.log("Is Array:", Array.isArray(data));
+
       setProjects(data);
     } catch (error) {
       console.error(error);

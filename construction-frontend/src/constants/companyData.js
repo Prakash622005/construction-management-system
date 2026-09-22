@@ -1,5 +1,5 @@
 const companyData = {
-  companyName: "Prakash Construction Pvt Ltd",
+  companyName: "Skyline Design & Construction",
 
   tagline: "Building Dreams Into Reality",
 
@@ -7,33 +7,50 @@ const companyData = {
     "/images/hero1.png",
     "/images/hero2.png",
     "/images/hero3.png",
-    "/images/hero4.png"
+    "/images/hero4.png",
+    "/images/hero5.png",
+
   ],
 
-  logo: "/logo.jpg",
+  logo: "/logo.png",
 
-  phone: "+91 98765 43210",
+   phone: [
+      "+91 99444 74174",
+      "+91 93635 16606"
+    ],
 
-  email: "info@prakashconstruction.com",
+  email: "info@skylinedesignconstruction.com",
 
   address: `
-No.123, Main Road,
-Bangalore,
-Karnataka,
-India
+Plot No. A3,
+Pillaiyar Kovil Street,
+New Perungalathur,
+Nedungunram,
+Chennai - 600127
 `,
+googleMapLink:
+    "https://www.google.com/maps/search/?api=1&query=Plot+No+A3+Pillaiyar+Kovil+Street+New+Perungalathur+Nedungunram+Chennai+600127",
 
   workingHours:
     "Monday - Saturday | 9:00 AM - 6:00 PM",
 
   about: `
-Prakash Construction Pvt Ltd is a trusted construction company
-specializing in residential, commercial, and renovation projects.
-With a commitment to quality, innovation, and customer satisfaction,
-we deliver modern construction solutions tailored to client needs.
-Our experienced team ensures every project is completed on time,
-within budget, and to the highest industry standards.
+Skyline Design & Construction is a Chennai-based construction company
+specializing in residential, commercial, industrial, and interior projects.
+We deliver quality workmanship, modern architectural designs, transparent
+project management, and cost-effective construction solutions that fit
+every client's budget.
   `,
+  whyChooseUs: [
+    "Experienced Construction Team",
+    "Transparent Pricing",
+    "Quality Materials",
+    "On-Time Project Delivery",
+    "Modern Architectural Designs",
+    "Customer-Centric Approach",
+    "End-to-End Construction Solutions",
+    "Affordable Pricing"
+  ],
 
   socialLinks: {
     facebook: "#",

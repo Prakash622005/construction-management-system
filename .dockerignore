@@ -1,0 +1,31 @@
+# Git
+.git
+.gitattributes
+.gitignore
+
+# IntelliJ
+.idea
+
+# Maven
+target
+
+# Node
+node_modules
+
+# Frontend build
+construction-frontend/node_modules
+construction-frontend/dist
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db

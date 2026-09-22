@@ -25,6 +25,9 @@ const ProjectCard = ({ project, onEdit, onDelete }) => {
           src={`http://localhost:8080/uploads/${project.imagePath}`}
           alt={project.title}
           className={styles.image}
+          onError={(e) => {
+            e.target.src = `https://abcd-1234.ngrok-free.app/uploads/${project.imagePath}`;
+          }}
         />
       </div>
 

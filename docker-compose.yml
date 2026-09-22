@@ -1,0 +1,94 @@
+services:
+
+  # ==========================================
+  # MySQL Database
+  # ==========================================
+
+  mysql:
+    image: mysql:8.4
+
+    container_name: construction-mysql
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: construction_management_db
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${MYSQL_ROOT_PASSWORD}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ==========================================
+  # Spring Boot Backend
+  # ==========================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: construction-backend
+
+    restart: unless-stopped
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/construction_management_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Kolkata
+
+      SPRING_DATASOURCE_USERNAME: root
+
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+      JWT_SECRET: ${JWT_SECRET}
+
+    volumes:
+      - uploads_data:/app/uploads
+
+
+  # ==========================================
+  # React Frontend
+  # ==========================================
+
+  frontend:
+    build:
+      context: ./construction-frontend
+      dockerfile: Dockerfile
+
+    container_name: construction-frontend
+
+    restart: unless-stopped
+
+    depends_on:
+      - backend
+
+    ports:
+      - "80:80"
+
+
+# ==========================================
+# Persistent Volumes
+# ==========================================
+
+volumes:
+
+  mysql_data:
+
+  uploads_data:

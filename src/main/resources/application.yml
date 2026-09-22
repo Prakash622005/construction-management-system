@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: construction-management-system
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/construction_management_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Kolkata}
+
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+
+    password: ${SPRING_DATASOURCE_PASSWORD:Prakash@3839}
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    open-in-view: false
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+
+      max-request-size: 20MB
+
+
+server:
+  port: 8080
+
+
+jwt:
+  secret: ${JWT_SECRET:constructionmanagementsystemjwtsecretkey2026constructionmanagementsystemjwtsecretkey2026}

@@ -79,6 +79,9 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/uploads/**"
                         ).permitAll()
+                        .requestMatchers(
+                                "/api/reviews/**"
+                        ).permitAll()
                         .anyRequest()
                         .authenticated()
                 )
